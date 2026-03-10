@@ -14,7 +14,7 @@ Este repositório contém o código-fonte do meu site de portfólio pessoal. O p
 
 ## ✨ Funcionalidades
 
-* Apresentação pessoal e detalhamento de hard/soft skills.
+* Apresentação pessoal.
 * Exibição de projetos acadêmicos e pessoais.
 * Interface responsiva (adapta-se a computadores, tablets e smartphones).
 * Formulário ou links diretos para contato.
