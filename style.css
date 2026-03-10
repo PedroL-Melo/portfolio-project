@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- Menu de Navegação --- */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 30px;
+    z-index: 10;
+}
+
+.menu {
+    border: 1px solid #333;
+    border-radius: 100px;
+    padding: 12px 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #fff;
+}
+
+/* --- Seção Principal (Hero) --- */
+.hero-section {
+    position: relative;
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    height: 450px;
+    background-image: url('images/florian-olivo-4hbJ-eymZ1o-unsplash-scaled-e1616631053918.jpg'); 
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px) brightness(0.3);
+    z-index: 1;
+}
+
+.content-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1100px;
+    gap: 40px;
+}
+
+/* --- Textos --- */
+.text-content {
+    flex: 1;
+}
+
+.saudacao {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.linha-divisoria {
+    border: none;
+    border-top: 1px solid #666;
+    width: 60%;
+    margin-bottom: 30px;
+}
+
+.cargo {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    line-height: 1.8;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+/* --- Imagem de Perfil --- */
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.perfil-img {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 850px) {
+    .content-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        margin-top: 80px;
+    }
+    
+    .linha-divisoria {
+        margin: 0 auto 30px auto;
+    }
+
+    .cargo {
+        font-size: 1.8rem;
+    }
+
+    .perfil-img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* --- Carrossel Infinito (Marquee) --- */
+.tech-marquee-container {
+    width: 100%;
+    background-color: #111;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    margin-top: 50px;
+}
+
+.tech-marquee {
+    display: inline-block;
+    animation: rolarTexto 20s linear infinite;
+}
+
+.tech-marquee span {
+    display: inline-block;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    color: #aaa;
+    margin: 0 40px;
+}
+
+@keyframes rolarTexto {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- Seção Sobre Mim --- */
+.sobre-section {
+    padding: 100px 10%;
+    background-color: #000;
+}
+
+.sobre-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 60px;
+}
+
+.sobre-texto {
+    flex: 1;
+}
+
+.sobre-texto h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.sobre-texto p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.sobre-imagem {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.img-sobre {
+    width: 320px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: -15px 15px 0px #222; 
+}
+
+/* Responsividade do Sobre Mim (Para celular) */
+@media (max-width: 850px) {
+    .sobre-container {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .sobre-imagem {
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .img-sobre {
+        width: 100%;
+        max-width: 350px;
+        box-shadow: -10px 10px 0px #222;
+    }
+}
