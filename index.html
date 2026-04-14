@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio | Desenvolvedor Back-end</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav class="menu">
@@ -28,7 +31,7 @@
                 <hr class="linha-divisoria">
                 <h1 class="cargo">Desenvolvedor<br>Back-end</h1>
             </div>
-            
+
             <div class="image-content">
                 <img src="images/me.png" alt="Foto de Pedro Lucas" class="perfil-img">
             </div>
@@ -60,8 +63,12 @@
         <div class="sobre-container">
             <div class="sobre-texto">
                 <h2>Sobre Mim</h2>
-                <p>Sou apaixonado por tecnologia e desenvolvimento, sempre focado em entender como as coisas funcionam por baixo dos panos. Atualmente, sou estudante do curso técnico de Informática para Internet no IFAC e estou no terceiro ano do ensino médio.</p>
-                <p>Tenho um interesse forte na arquitetura back-end e em segurança web, adorando criar soluções estruturadas e explorar vulnerabilidades de sistemas. Quando não estou codando, gosto de me aprofundar em novas tecnologias e desafios da área.</p>
+                <p>Sou apaixonado por tecnologia e desenvolvimento, sempre focado em entender como as coisas funcionam
+                    por baixo dos panos. Atualmente, sou estudante do curso técnico de Informática para Internet no IFAC
+                    e estou no terceiro ano do ensino médio.</p>
+                <p>Tenho um interesse forte na arquitetura back-end e em segurança web, adorando criar soluções
+                    estruturadas e explorar vulnerabilidades de sistemas. Quando não estou codando, gosto de me
+                    aprofundar em novas tecnologias e desafios da área.</p>
             </div>
             <div class="sobre-imagem">
                 <img src="images/IMG_2981.JPEG" alt="Minha foto sobre mim" class="img-sobre">
@@ -69,28 +76,40 @@
         </div>
     </section>
 
+    <section id="publicacoes" style="padding: 80px 0; background-color: #000;">
+        <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+            <h2 class="titulo-secao">Publicações</h2>
+            <div id="lista-publicacoes" style="width: 100%; padding: 0 10%;">
+            </div>
+        </div>
+    </section>
+
     <section id="projetos" class="projetos-section">
-    <h2 class="titulo-secao">Meus Projetos</h2>
-    
-    <div class="coverflow-wrapper">
-        <button class="nav-btn btn-left" onclick="mudarProjeto(-1)">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        
-        <div class="coverflow-track" id="trackProjetos">
+        <h2 class="titulo-secao">Meus Projetos</h2>
+
+        <div class="coverflow-wrapper">
+            <button class="nav-btn btn-left" onclick="mudarProjeto(-1)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
+            </button>
+
+            <div class="coverflow-track" id="trackProjetos">
             </div>
 
-        <button class="nav-btn btn-right" onclick="mudarProjeto(1)">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-    </div>
+            <button class="nav-btn btn-right" onclick="mudarProjeto(1)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6" />
+                </svg>
+            </button>
+        </div>
 
-    <div class="info-projeto-ativo">
-        <h3 id="infoTitulo">Nome do Projeto</h3>
-        <p id="infoSubtitulo">Subtítulo ou Empresa</p>
-        <div class="tags-container" id="infoTags"></div>
-        <p class="dica-clique">Clique na imagem central para ver os detalhes</p>
-    </div>
+        <div class="info-projeto-ativo">
+            <h3 id="infoTitulo">Nome do Projeto</h3>
+            <p id="infoSubtitulo">Subtítulo ou Empresa</p>
+            <div class="tags-container" id="infoTags"></div>
+            <p class="dica-clique">Clique na imagem central para ver os detalhes</p>
+        </div>
     </section>
 
     <div id="projetoModal" class="modal">
@@ -99,7 +118,7 @@
             <h2 id="modalTitulo">Nome do Projeto</h2>
             <img id="modalImagem" src="" alt="Telas do Projeto" class="modal-img-destaque">
             <div class="modal-descricao">
-                <h3>Minha Participação:</h3>
+                <h3 id="modalLabelParticipacao">Minha Participação:</h3>
                 <p id="modalTexto">Descrição vai aqui...</p>
                 <a id="modalGithub" href="#" target="_blank" class="botao-github">Acessar GitHub</a>
             </div>
@@ -108,7 +127,7 @@
 
     <section id="contato" class="contato-section">
         <h2 class="titulo-secao">Vamos Conversar?</h2>
-        
+
         <div class="contato-container">
             <div class="terminal-box">
                 <div class="terminal-header">
@@ -117,27 +136,30 @@
                     <span class="dot green"></span>
                     <p>bash - contato@pedrolucas.exe</p>
                 </div>
-                
+
                 <div class="terminal-body">
                     <p><span class="prompt">root@pedro:~$</span> cat contato.txt</p>
-                    <p class="terminal-text">Se você gostou do meu trabalho, quer trocar uma ideia sobre segurança web, arquitetura back-end ou tem um projeto legal, me chama nas redes abaixo ou manda um e-mail!</p>
-                    
+                    <p class="terminal-text">Se você gostou do meu trabalho, quer trocar uma ideia sobre segurança web,
+                        arquitetura back-end ou tem um projeto legal, me chama nas redes abaixo ou manda um e-mail!</p>
+
                     <div class="social-links">
                         <a href="mailto:pedrolucasmelo5@gmail.com" class="social-btn email">E-mail</a>
                         <a href="https://github.com/PedroL-Melo" target="_blank" class="social-btn github">GitHub</a>
-                        <a href="https://instagram.com/pedro.lcz" target="_blank" class="social-btn instagram">Instagram</a>
+                        <a href="https://instagram.com/pedro.lcz" target="_blank"
+                            class="social-btn instagram">Instagram</a>
                     </div>
-                    
+
                     <p><span class="prompt">root@pedro:~$</span> <span class="cursor-blink">&nbsp;</span></p>
                 </div>
             </div>
         </div>
-        
+
         <footer>
-            <p>&copy; 2026 Anthony. Desenvolvido com ☕ e muito código.</p>
+            <p>&copy; 2026 Pedro. Desenvolvido com ☕ e muito código.</p>
         </footer>
     </section>
 
     <script src="script.js"></script>
 </body>
+
 </html>

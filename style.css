@@ -607,3 +607,38 @@ footer p {
         text-align: center;
     }
 }
+
+/* Esconde a imagem no modal se o src estiver vazio */
+#modalImagem[src=""], #modalImagem:not([src]) {
+    display: none;
+}
+
+/* Card de publicação estilo 'list-item' de terminal */
+.card-publicacao {
+    background-color: #0a0a0a;
+    border-left: 4px solid #155cdf; /* Barra lateral azul de destaque */
+    border-bottom: 1px solid #222;
+    padding: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.card-publicacao:hover {
+    background-color: #111;
+}
+
+.card-publicacao h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.card-publicacao p {
+    font-family: 'Oswald', sans-serif;
+    color: #155cdf;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}

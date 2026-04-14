@@ -102,17 +102,33 @@ renderizarCarrossel();
 // Seleciona o menu lá do topo
 const menuSuperior = document.querySelector('header');
 
-function abrirModal(titulo, descricao, imagem, linkGithub) {
+// Adicionado o parâmetro 'mostrarParticipacao' com valor padrão true
+function abrirModal(titulo, descricao, imagem, link, textoBotao = "Acessar GitHub", mostrarParticipacao = true) {
     document.getElementById('modalTitulo').innerText = titulo;
     document.getElementById('modalTexto').innerText = descricao;
-    document.getElementById('modalImagem').src = imagem;
-    document.getElementById('modalGithub').href = linkGithub;
     
-    // Mostra o modal
-    modal.style.display = 'block';
+    // Controla a visibilidade do título "Minha Participação"
+    const labelParticipacao = document.getElementById('modalLabelParticipacao');
+    labelParticipacao.style.display = mostrarParticipacao ? "block" : "none";
 
-    // ESCONDE O MENU para não tampar o 'X'
-    menuSuperior.style.display = 'none';
+    // Garante que a imagem suma se não houver (como no caso dos artigos)
+    const imgElement = document.getElementById('modalImagem');
+    if (imagem) {
+        imgElement.src = imagem;
+        imgElement.style.display = "block";
+    } else {
+        imgElement.style.display = "none";
+    }
+    
+    // Atualiza o link do botão e o texto
+    const btnLink = document.getElementById('modalGithub');
+    btnLink.href = link; 
+    btnLink.innerText = textoBotao;
+    
+    // Exibe o modal e esconde o menu para não sobrepor
+    const modal = document.getElementById('projetoModal');
+    modal.style.display = 'block';
+    document.querySelector('header').style.display = 'none';
 }
 
 function fecharModal() {
@@ -130,3 +146,44 @@ window.onclick = function(event) {
         menuSuperior.style.display = 'flex'; // Garante que o menu volte aqui também
     }
 }
+
+const minhasPublicacoes = [
+    {
+        titulo: "MARIOT: Automação na Amazônia Ocidental",
+        subtitulo: "XVI Workshop de Computação Aplicada à Amazônia (WCAMA)",
+        ano: "2025",
+        tags: ["IoT", "EFICIÊNCIA ENERGÉTICA", "ARTIGO"],
+        img: "images/capa_artigo.png",
+        desc: "O MARIOT é um projeto de pesquisa focado em Internet das Coisas (IoT) e eficiência energética, desenvolvido para monitorar e otimizar o consumo de energia em ambientes residenciais ou acadêmicos. Atuei no desenvolvimento da arquitetura do sistema e na integração de sensores para coleta de dados em tempo real. O trabalho foi publicado como artigo científico em um workshop especializado em 2025, validando a eficácia da solução proposta.",
+        github: "https://sol.sbc.org.br/index.php/wcama/article/view/36087"
+    },
+];
+
+function renderizarPublicacoes() {
+    const container = document.getElementById("lista-publicacoes");
+    container.innerHTML = ''; 
+
+    minhasPublicacoes.forEach((pub) => {
+        const div = document.createElement('div');
+        div.classList.add('card-publicacao');
+        div.innerHTML = `
+            <h3>${pub.titulo}</h3>
+            <p>${pub.subtitulo} • ${pub.ano}</p>
+        `;
+
+        // Ordem dos parâmetros: titulo, desc, imagem, link, textoBotao, mostrarParticipacao
+        div.onclick = () => abrirModal(
+            pub.titulo, 
+            pub.desc, 
+            "", 
+            pub.github, 
+            "Acessar Artigo", 
+            false
+        );
+
+        container.appendChild(div);
+    });
+}
+
+
+renderizarPublicacoes();
