@@ -65,7 +65,7 @@ header {
     left: 0;
     width: 100%;
     height: 450px;
-    background-image: url('images/florian-olivo-4hbJ-eymZ1o-unsplash-scaled-e1616631053918.jpg'); 
+    background-image: url('images/background.jpg'); 
     background-size: cover;
     background-position: center;
     filter: blur(5px) brightness(0.3);
