@@ -24,6 +24,15 @@ const meusProjetos = [
         desc: "Uma Prova de Conceito (PoC) demonstrando a exploração de uma vulnerabilidade de Cross-Site Scripting (XSS). O payload injetado foi utilizado para carregar e executar o clássico jogo Doom direto no navegador, provando o impacto da falha de forma criativa.",
         github: "https://github.com/PedroL-Melo/js-doom-injector"
     },
+    {
+        titulo: "Hand Tracking com OpenCV, Python e MediaPipe",
+        subtitulo: "Visão Computacional",
+        tags: ["VISÃO COMPUTACIONAL", "OPENCV", "PYTHON", "MEDIAPIPE", "MACHINE LEARNING"],
+        img: "images/HandTracking.png",
+        desc: "Desenvolvimento de uma solução para rastreamento de mãos utilizando OpenCV, Python e MediaPipe. O projeto consiste em rastrear movimentos da mão em tempo real, com aplicações em interação humano-computador.",
+        github: "https://github.com/PedroL-Melo/hand-tracking-python"
+    },
+    
 ];
 
 let indiceAtual = 0;
