@@ -32,6 +32,14 @@ const meusProjetos = [
         desc: "Desenvolvimento de uma solução para rastreamento de mãos utilizando OpenCV, Python e MediaPipe. O projeto consiste em rastrear movimentos da mão em tempo real, com aplicações em interação humano-computador.",
         github: "https://github.com/PedroL-Melo/hand-tracking-python"
     },
+    {
+        titulo: "SASL - Sistema de Agendamento de Salas e Laboratórios",
+        subtitulo: "Arquitetura Back-end",
+        tags: ["BACK-END", "LARAVEL", "MARIADB"],
+        img: "images/sasl.png",
+        desc: "Desenvolvimento de um sistema para auxiliar no agendamento e organização de salas e laboratórios. Atuei no desenvolvimento do Back-end e banco de dados utilizando minhas skils em Laravel, MVC, e MariaDB.",
+        github: "https://github.com/PedroL-Melo/SASL"
+    },
     
 ];
 
